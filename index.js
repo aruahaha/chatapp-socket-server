@@ -15,6 +15,7 @@ let users = [];
 
 io.on("connection", (socket) => {
   const user = socket.handshake.query;
+  console.log(socket.id);
   user.socketId = socket.id;
   socket.join(user.userId);
   socket.emit("first-message", "First message from server");
