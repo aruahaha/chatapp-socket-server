@@ -47,6 +47,10 @@ io.on("connection", (socket) => {
   });
 });
 
+app.get("/", (req, res) => {
+  res.send("Server is connected to port " + PORT);
+});
+
 server.listen(PORT, () => {
   console.log(`Server is listening to ${PORT}`);
 });
